@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %} {{title}} {% endblock %}
+{% block style %}
+	{% include "style.html" %}
+{% endblock %}
+
+{% block main %}
+<p>{{body}}</p>
+
+    <form action="" method="post">
+			<fieldset>
+				<legend>Зарегистрируйтесь</legend>
+				<p><label>Ваше имя:</label>
+					 <input type="text" name="name" id="name"><br />
+					 <label>Ваш email:</label>
+					 <input type="text" name="email" id="email"></p>
+			</fieldset>
+ 	    <div><input type="submit" value="Регистрация" /></div>
+    </form>
+
+    {% if data: %}
+        <p>Данные {{data}} успешно записаны в файл (надпись тестовая, реальной записи не происходит)</p>
+    {% endif %}
+{% endblock %}
+
